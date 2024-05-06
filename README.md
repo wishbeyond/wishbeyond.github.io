@@ -19,4 +19,4 @@ WishBeyond is currently in development, and new features and updates will be add
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE.md).
