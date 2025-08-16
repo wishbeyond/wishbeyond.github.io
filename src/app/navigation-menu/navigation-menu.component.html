@@ -1,0 +1,25 @@
+<nav>
+  <div class="nav-icon">
+    <img src="assets/logo_w_ol.svg" alt="Logo"/>
+  </div>
+
+  <ul>
+    <li>
+      <a routerLink="/">Home</a>
+    </li>
+    @if (authService.isAuth()) 
+    {<li>
+      <a routerLink="/wishlists">Your Wishlists</a>
+    </li>}
+  </ul>
+
+  <div class="nav-title">
+    <h1>WISHBEYOND</h1>
+  </div>
+
+  @if (authService.isAuth()) {
+    <button class="nav-button" (click)="onLogout()">Log Out</button>
+  } @else {
+    <button class="nav-button" routerLink="auth">Sign In/Sign Up</button>
+  }
+</nav>

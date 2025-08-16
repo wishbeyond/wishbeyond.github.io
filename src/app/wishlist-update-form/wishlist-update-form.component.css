@@ -1,0 +1,408 @@
+/* .wishlist-form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn {
+  background-color: #28A745;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+.add-item-btn, .add-link-btn {
+  background-color: #007BFF;
+  color: white;
+}
+
+.add-item-btn:hover, .add-link-btn:hover {
+  background-color: #0056b3;
+}
+
+.remove-btn {
+  background-color: #DC3545;
+  color: white;
+}
+
+.remove-btn:hover {
+  background-color: #c82333;
+}
+
+.wishlist-items {
+  margin-top: 1rem;
+}
+
+.wishlist-item {
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.item-links {
+  margin-top: 0.5rem;
+}
+
+.link-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.link-input input {
+  flex-grow: 1;
+}
+
+.badge {
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+} */
+/* Wishlist Form Styles (applies to both create & update forms) */
+.wishlist-form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Groups */
+/* Inline label + control */
+.wishlist-form-container .form-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;       /* space between label and input */
+  margin-bottom: 1rem;
+}
+
+/* Keep labels tight */
+.wishlist-form-container .form-group label {
+  min-width: 140px;   /* or whatever fits your longest label */
+  font-weight: 600;
+  color: #333;
+  margin: 0;          /* kill the bottom margin from before */
+  text-align: right;  /* aligns label text neatly to edge */
+}
+
+.wishlist-form-container input.form-control,
+.wishlist-form-container textarea.form-control,
+.wishlist-form-container select.form-control {
+  /* padding: 0.75rem 1rem; */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fafafa;
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+}
+
+.wishlist-form-container input.form-control:focus,
+.wishlist-form-container textarea.form-control:focus,
+.wishlist-form-container select.form-control:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40,167,69,0.2);
+  background-color: #fff;
+}
+
+/* Section headers */
+.wishlist-form-container h3,
+.wishlist-form-container h4,
+.wishlist-form-container h5 {
+  margin: 0.5rem 0;
+  font-weight: bold;
+  color: #28a745;
+}
+
+/* Wishlist items wrapper */
+.wishlist-form-container .wishlist-items {
+  border-top: 2px solid #eee;
+  padding-top: 1rem;
+}
+
+/* Single item block */
+.wishlist-form-container .wishlist-item {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Buttons inside forms */
+.wishlist-form-container .btn {
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.wishlist-form-container .add-item-btn,
+.wishlist-form-container .add-link-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.wishlist-form-container .add-item-btn:hover,
+.wishlist-form-container .add-link-btn:hover {
+  background-color: #218838;
+}
+
+.wishlist-form-container .remove-btn {
+  background-color: #ff6464;
+  color: #fff;
+}
+
+.wishlist-form-container .remove-btn:hover {
+  background-color: #c30000;
+}
+
+.wishlist-form-container .submit-btn {
+  align-self: flex-end;
+  background-color: #28a745;
+  color: #fff;
+}
+
+.wishlist-form-container .submit-btn:hover {
+  background-color: #218838;
+}
+
+/* Link input rows */
+.wishlist-form-container .link-input {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.wishlist-form-container .link-input input {
+  flex: 1;
+}
+
+/* Positioning each wishlist-item like a card */
+.wishlist-form-container .wishlist-item {
+  position: relative; /* lets the delete button position inside */
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Delete item button (top-right corner, styled like preview list) */
+.wishlist-form-container .wishlist-item .remove-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  padding: 0.3rem;
+  height: 2.1rem;
+  width: 2.1rem;
+
+  background-color: #f9f9f9;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG mask inside the remove button */
+.wishlist-form-container .wishlist-item .remove-btn .svg-mask {
+  width: 1.5rem;
+  height: 1.5rem;
+  mask-image: url("/assets/trashbin.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  background-color: #ff6464;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effects like in wishlist-preview */
+.wishlist-form-container .wishlist-item .remove-btn:hover {
+  padding: 0.05rem;
+}
+
+.wishlist-form-container .wishlist-item .remove-btn:hover .svg-mask {
+  background-color: #c30000;
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Add Link button aligned left with consistent green style */
+.wishlist-form-container .add-link-btn {
+  margin-top: 0.5rem;
+  background-color: #28a745;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease;
+}
+
+.wishlist-form-container .add-link-btn:hover {
+  background-color: #218838;
+}
+
+/* Reuse the global plus icon style */
+.button-add {
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 1rem;
+  margin: auto;
+  background-image: url("/assets/plus.svg");
+  background-repeat: no-repeat;
+  background-size: 2rem 2rem;
+  background-position: center;
+  background-color: #28A745;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.button-add:hover { transform: scale(1.08); }
+.button-add:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(40,167,69,.25);
+}
+
+/* Small variant for inline “Add Link” */
+.button-add--sm {
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: .6rem;
+  background-size: 1.4rem 1.4rem;
+}
+
+/* ---- Place the buttons in the forms ---- */
+.wishlist-form-container .wishlist-items { position: relative; padding-top: .5rem; }
+.wishlist-form-container .wishlist-items > .button-add {
+  position: absolute;
+  top: .25rem;
+  right: .25rem;
+}
+
+/* “Add Link” inside each item’s Links subsection */
+.wishlist-form-container .item-links { position: relative; padding-top: .25rem; }
+.wishlist-form-container .item-links > .button-add {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Optional spacing when buttons wrap on small screens */
+@media (max-width: 560px){
+  .wishlist-form-container .wishlist-items { padding-top: 2.8rem; }
+  .wishlist-form-container .item-links { padding-top: 2rem; }
+}
+
+/* Inline row for link input + remove icon */
+.wishlist-form-container .link-input {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+/* Input takes the available width */
+.wishlist-form-container .link-input .form-control {
+  flex: 1;
+  min-width: 0; /* prevents overflow in flex rows */
+}
+
+/* Compact trash icon button (matches your other delete style) */
+.wishlist-form-container .link-input .remove-link-btn {
+  padding: .25rem;
+  height: 2rem;
+  width: 2rem;
+  border: none;
+  border-radius: 4px;
+  background: #f9f9f9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: padding .2s ease, background-color .2s ease, transform .15s ease;
+}
+
+/* Masked trash icon */
+.wishlist-form-container .link-input .remove-link-btn .svg-mask {
+  width: 1.25rem;
+  height: 1.25rem;
+  mask-image: url("/assets/trashbin.svg"); /* no leading slash */
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  background-color: #ff6464;
+  transition: background-color .2s ease, width .15s ease, height .15s ease;
+}
+
+.wishlist-form-container .link-input .remove-link-btn:hover {
+  padding: .1rem;
+}
+
+.wishlist-form-container .link-input .remove-link-btn:hover .svg-mask {
+  background-color: #c30000;
+  width: 1.5rem;
+  height: 1.5rem;
+}

@@ -1,0 +1,103 @@
+:host {
+  cursor: pointer;
+}
+
+.wishlists-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+button {
+  background-color: inherit;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.wishlist-list {
+  list-style: none;
+  border-width: 3px;
+  padding: 0;
+}
+
+.wishlist:hover {
+  border: 3px solid #28A745;
+  background-color: #d3d3d3;
+}
+
+.wishlist:hover .delete {
+  background-color: #d3d3d3;
+}
+
+.wishlist {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.wishlist-info {
+  cursor: pointer;
+}
+
+.svg-mask {
+  width: 1.5rem;
+  height: 1.5rem;
+  mask-image: url("/assets/trashbin.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  background-color: #ff6464;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+button:hover .svg-mask {
+  background-color: #c30000;
+  width: 2rem;
+  height: 2rem;
+}
+
+.delete {
+  padding: 0.3rem;
+  height: 2.1rem;
+  align-self: flex-start;
+  transition: all 0.3s ease-in-out;
+  background-color: #f9f9f9;
+}
+
+.delete:hover {
+  padding: 0.05rem;
+}
+
+.wishlist-container-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.wishlist-container-header h2 {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.button-add img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.button-add {
+  padding: 0.2rem;
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 1rem;
+  margin: auto;
+}

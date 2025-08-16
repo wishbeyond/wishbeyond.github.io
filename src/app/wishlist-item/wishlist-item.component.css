@@ -1,0 +1,51 @@
+.wishlist-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.item-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.badge {
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.item-description {
+  font-style: italic;
+  color: #555;
+}
+
+.item-links ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.item-links li {
+  margin: 4px 0;
+}
+
+.item-links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.item-links a:hover {
+  text-decoration: underline;
+}
+
+.item-priority {
+  font-weight: bold;
+  margin-top: 12px;
+}

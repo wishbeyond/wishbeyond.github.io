@@ -8,14 +8,14 @@ WishBeyond is a web-based application currently in development. Our goal is to p
 
 ## Key Features
 
-- **Create Wishlists**: Easily create and customize wishlists for different events or categories.
-- **Share with Others**: Share your wishlists with friends and family via email or social media.
-- **Collaborative Planning**: Invite others to view and contribute to your wishlist, allowing for collaborative gift planning.
-- **Built-in Chat**: Discuss and coordinate gift ideas with fellow wishlist contributors using the built-in chat functionality.
+- **Create Wishlists**: Easily create and customize wishlists for different events or categories. (Kinda WIP)
+- **Share with Others**: Share your wishlists with friends and family via email or social media. (WIP)
+- **Collaborative Planning**: Invite others to view and contribute to your wishlist, allowing for collaborative gift planning. (WIP)
+- **Built-in Chat**: Discuss and coordinate gift ideas with fellow wishlist contributors using the built-in chat functionality. (WIP)
 
 ## Development Status
 
-WishBeyond is currently in development, and new features and updates will be added regularly. Stay tuned for future announcements and releases!
+WishBeyond is currently in development, and new features and updates will be added likely irregularly. Stay tuned for future announcements and releases!
 
 ## License
 

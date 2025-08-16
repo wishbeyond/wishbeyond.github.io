@@ -1,0 +1,12 @@
+<div class="welcome-container">
+  <h1>Welcome to WishBeyond</h1>
+  @if (authService.isAuth()) {
+    <div>
+      <p>Welcome back! Head to your <a routerLink="/wishlist">wishlists</a>.</p>
+    </div>
+  } @else {
+    <div>
+      <p><a routerLink="/signup">Sign up</a> now or <a routerLink="/login">login</a> to get started.</p>
+    </div>
+  }
+</div>

@@ -1,0 +1,107 @@
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+  width: 100vw;
+  align-self: start;
+  margin-top: auto;
+}
+
+.footer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0.5rem 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #28A745;  /* Match primary button color on hover */
+}
+
+/* GitHub Links Styling */
+.footer-github {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.svg-mask {
+  width: 1.5rem;
+  height: 1.5rem;
+  mask-image: url("/assets/github-mark.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.footer-github a {
+  color: #fff;
+  margin: 0.5rem 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-github a:hover {
+  color: #28A745;  /* Green color on hover */
+}
+
+.footer-github a span {
+  margin-left: 0.5rem;
+}
+
+.footer-github a:hover .svg-mask {
+  background-color: #28A745;
+}
+
+.footer-github img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  margin: 1.5rem;
+  color: #aaa;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .footer-links, .footer-github {
+    margin-bottom: 0;
+  }
+}

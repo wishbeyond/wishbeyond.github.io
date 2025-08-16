@@ -1,0 +1,84 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="wishlist-form-container">
+  <!-- Wishlist Name -->
+  <div class="form-group">
+    <label for="name">Wishlist Name</label>
+    <input id="name" type="text" formControlName="name" required class="form-control" />
+  </div>
+
+  <!-- Wishlist Description -->
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description" class="form-control"></textarea>
+  </div>
+
+  <!-- Visibility Type -->
+  <div class="form-group">
+    <label for="visibility">Visibility</label>
+    <select id="visibility" formControlName="visibilityType" class="form-control">
+      @for (type of visibilityTypes; track type) {
+      <option [value]="type">{{ type }}</option>
+      }
+    </select>
+  </div>
+
+  <!-- Wishlist Priority -->
+  <div class="form-group">
+    <label for="priority">Priority</label>
+    <input id="priority" type="number" formControlName="priority" class="form-control" />
+  </div>
+
+  <!-- Wishlist Items -->
+  <div formArrayName="items" class="wishlist-items">
+    <h3>Wishlist Items</h3>
+    <button type="button" (click)="addItem()" class="button-add primary" aria-label="Add item"></button>
+    
+    @for (itemControl of items.controls; track itemControl; let i = $index) {
+    <div [formGroupName]="i" class="wishlist-item">
+      <h4>Item {{ i + 1 }}</h4>
+      
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" formControlName="name" required class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea formControlName="description" class="form-control"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Image URL</label>
+        <input type="text" formControlName="image" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label>Priority</label>
+        <input type="number" formControlName="priority" class="form-control" />
+      </div>
+
+      <!-- Links (Dynamic FormArray) -->
+      <div formArrayName="links" class="item-links">
+        <h5>Links</h5>
+        <button type="button" (click)="addLink(i)" class="button-add button-add--sm primary" aria-label="Add link"></button>
+        
+        @for (linkControl of getLinks(itemControl).controls; track linkControl; let j = $index) {
+        <div class="form-group link-input">
+          <input type="text" [formControlName]="j" class="form-control" />
+          <button type="button"
+            (click)="removeLink(i, j)"
+            class="remove-link-btn"
+            aria-label="Remove link">
+            <div class="svg-mask"></div>
+          </button>        </div>
+        }
+      </div>
+
+      <button type="button" (click)="removeItem(i)" class="btn remove-btn">
+        <div class="svg-mask"></div>
+      </button>    
+    </div>
+    }
+  </div>
+
+  <button type="submit" class="btn submit-btn">Save Wishlist</button>
+</form>

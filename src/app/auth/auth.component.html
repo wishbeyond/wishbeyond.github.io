@@ -1,0 +1,30 @@
+<div class="auth-container">
+  <form class="form signin" [formGroup]="signInForm" (submit)="signIn()" [class.hidden]="!signInMode">
+    <h2>Sign in:</h2>
+    <label for="username">Username:</label>
+    <input id="username-signin" type="text" formControlName="username">
+    <label for="password-signin">Password:</label>
+    <div class="password-wrapper">
+      <input id="password-signin" type="{{ showSignInPassword ? 'text' : 'password' }}" formControlName="password">
+      <span class="toggle-visibility" (click)="toggleSignInVisibility()">{{ showSignInPassword ? 'HIDE' : 'SHOW' }}</span>
+    </div>
+    <button type="submit" class="enter-catcher"></button>
+  </form>
+  <form class="form signup" #signUpFormRef="ngForm" [formGroup]="signUpForm" (submit)="signUp()" [class.hidden]="signInMode">
+    <h2>Sign up:</h2>
+    <label for="username">Username:</label>
+    <input id="username-signup" type="text" formControlName="username">
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email">
+    <label for="password-signup">Password:</label>
+    <div class="password-wrapper">
+      <input id="password-signup" type="{{ showSignUpPassword ? 'text' : 'password' }}" formControlName="password">
+      <span class="toggle-visibility" (click)="toggleSignUpVisibility()">{{ showSignUpPassword ? 'HIDE' : 'SHOW' }}</span>
+    </div>
+    <button type="submit" class="enter-catcher"></button>
+  </form>
+  <div class="button-group">
+    <button class="button signin" type="button" (click)="signInMode ? handleClick(formSigninId) : switch()" [class.primary]="signInMode" [class.secondary]="!signInMode">@if(signInMode){Sign In}@else{< Sign In}</button>
+    <button class="button signup" type="button" (click)="signInMode ? switch() : handleClick(formSignupId)" [class.primary]="!signInMode" [class.secondary]="signInMode">@if(signInMode){Sign Up >}@else{Sign Up}</button>
+  </div>
+</div>

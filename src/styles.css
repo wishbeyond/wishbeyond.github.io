@@ -1,0 +1,57 @@
+input {
+  padding: 0px;
+  font-size: 14px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;  /* Choose a modern sans-serif font */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;  /* Ensure headings use the chosen font */
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: #28A745;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+button.secondary {
+  background-color: #6BAF92;  /* Softer muted green for secondary button */
+}
+
+button.secondary:hover {
+  background-color: #4A8B6E;  /* Darker muted green on hover */
+}
+
+button.primary {
+  background-color: #28A745;
+  color: #fff;
+}
+
+button.primary:hover {
+  background-color: #218838;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

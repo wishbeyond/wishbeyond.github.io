@@ -1,0 +1,14 @@
+<div class="wishlists-container">
+  <div class="wishlist-container-header">
+    <h2>Your Wishlists:</h2>
+    <button type="button" class="button-add primary" (click)="routeToCreate()"></button>
+  </div>
+
+  <ul class="wishlist-list">
+    @for(wishlist of service.wishlists(); track wishlist.id) {
+      <app-wishlist-preview [wishlistPreview]="wishlist"/>
+    } @empty {
+      <div>You have no wishlists.</div>
+    }
+  </ul>
+</div>

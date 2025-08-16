@@ -1,0 +1,20 @@
+<div class="wishlist-container">
+  <div class="wishlist-container-header">
+    <h2>Name: {{service.currentWishlist()?.name}}</h2>
+    <div class="wishlist-container-header-buttons">
+      <button class="edit" (click)="edit()">
+        <div class="svg-mask"></div>
+      </button>
+      <button class="delete" (click)="delete()">
+        <div class="svg-mask"></div>
+      </button>
+    </div>
+  </div>
+  <ul class="wishlist-items-list">
+    @for (item of service.currentWishlist()?.items; track item.id) {
+      <app-wishlist-item [wishlistItem]="item"/>
+    } @empty {
+      <div>No items in this wishlist yet.</div>
+    }
+  </ul>
+</div>

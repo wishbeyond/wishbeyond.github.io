@@ -1,0 +1,23 @@
+<div class="wishlist-item">
+  <h3 class="item-name">
+    {{ wishlistItem().name }}
+    @if(wishlistItem().isFulfilled){<span class="badge">Fulfilled</span>}
+  </h3>
+  @if(wishlistItem().description)
+  {<p class="item-description">
+    {{ wishlistItem().description }}
+  </p>}
+  @if(wishlistItem().links?.length)
+  {<div class="item-links">
+    <h4>Links:</h4>
+    <ul>
+      @for (link of wishlistItem().links; track link)
+      {<li>
+        <a [href]="link" target="_blank" rel="noopener noreferrer">{{ link }}</a>
+      </li>}
+    </ul>
+  </div>}
+  <p class="item-priority">
+    <strong>Priority:</strong> {{ wishlistItem().priority }}
+  </p>
+</div>

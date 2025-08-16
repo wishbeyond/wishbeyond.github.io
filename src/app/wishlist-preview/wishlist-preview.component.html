@@ -1,0 +1,9 @@
+<li class="wishlist">
+  <div class="wishlist-info">
+    <h3>{{ wishlistPreview.name }}</h3>
+    <p>Items: {{ wishlistPreview.amountOfItems }} / {{ wishlistPreview.amountOfFulfilledItems }}</p>
+  </div>
+  <button class="delete" (click)="deleteWishlist()">
+    <div class="svg-mask"></div>
+  </button>
+</li>
